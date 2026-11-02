@@ -1,0 +1,13 @@
+unique_name: member
+object_type: dataset
+label: member
+connection_id: warehouse_claims
+table: member
+
+columns:
+  - name: member_id
+    data_type: bigint
+  - name: member_name
+    data_type: string
+  - name: birth_year
+    data_type: int

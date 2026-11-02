@@ -1,0 +1,7 @@
+unique_name: claims_repo
+object_type: catalog
+label: Claims Repository
+version: 1.8
+aggressive_agg_promotion: false
+build_speculative_aggs: false
+hidden_models: []

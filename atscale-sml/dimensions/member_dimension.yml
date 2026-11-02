@@ -1,0 +1,50 @@
+unique_name: member_dimension
+object_type: dimension
+label: Member
+description: The people claims are filed for.
+type: standard
+
+hierarchies:
+  - unique_name: member_hierarchy
+    label: Member Hierarchy
+    levels:
+      - unique_name: member_level
+        secondary_attributes:
+          - unique_name: birth_year_attribute
+            label: Birth Year
+            dataset: member
+            name_column: birth_year
+            key_columns:
+              - birth_year
+        aliases:
+          - unique_name: member_alias
+            label: Member Alias
+            dataset: member
+            name_column: member_name
+            sort_column: member_name
+        metrics:
+          - unique_name: member_count
+            label: Member Count
+            dataset: member
+            column: member_id
+            calculation_method: count distinct
+
+level_attributes:
+  - unique_name: member_level
+    label: Member
+    description: One row per member.
+    dataset: member
+    name_column: member_name
+    key_columns:
+      - member_id
+
+relationships:
+  - unique_name: member_to_status
+    from:
+      dataset: member
+      join_columns:
+        - member_id
+    to:
+      dimension: status_dimension
+      level: status_level
+    type: embedded

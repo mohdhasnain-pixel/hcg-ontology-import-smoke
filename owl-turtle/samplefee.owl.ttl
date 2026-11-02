@@ -1,0 +1,63 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix hcg: <https://hcg.autonomize.ai/ns/> .
+@prefix : <urn:hcg:schema:Sample_fee_schedule#> .
+
+<urn:hcg:schema:Sample_fee_schedule> a owl:Ontology ;
+    dct:title "Sample fee schedule" .
+
+# Classes
+:SAMPLEFEE a owl:Class ;
+    rdfs:label "Sample fee schedule" ;
+    hcg:vocabulary <urn:hcg:SAMPLEFEE> ;
+    rdfs:subClassOf skos:Concept ;
+    owl:hasKey ( :code ) .
+
+# Datatype properties
+:code a owl:DatatypeProperty ;
+    rdfs:label "Code" ;
+    rdfs:domain :SAMPLEFEE ;
+    rdfs:range xsd:string ;
+    a owl:FunctionalProperty ;
+    a owl:InverseFunctionalProperty .
+
+:label a owl:DatatypeProperty ;
+    rdfs:label "Name" ;
+    rdfs:domain :SAMPLEFEE ;
+    rdfs:range xsd:string ;
+    a owl:FunctionalProperty .
+
+:allowed_usd a owl:DatatypeProperty ;
+    rdfs:label "allowed_usd" ;
+    rdfs:domain :SAMPLEFEE ;
+    rdfs:range xsd:string ;
+    a owl:FunctionalProperty .
+
+:cpt_code a owl:DatatypeProperty ;
+    rdfs:label "CPT code" ;
+    rdfs:domain :SAMPLEFEE ;
+    rdfs:range xsd:string ;
+    hcg:codeScheme <urn:hcg:CPT> ;
+    a owl:FunctionalProperty .
+
+# Object properties (relations)
+:parent a owl:ObjectProperty ;
+    rdfs:label "Parent" ;
+    rdfs:domain :SAMPLEFEE ;
+    rdfs:range :SAMPLEFEE ;
+    hcg:cardinality "N:1" ;
+    a owl:FunctionalProperty .
+
+# Shapes
+:SAMPLEFEEShape a sh:NodeShape ;
+    sh:targetClass :SAMPLEFEE ;
+    sh:property [ sh:path :code ; sh:datatype xsd:string ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path :label ; sh:datatype xsd:string ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path :allowed_usd ; sh:datatype xsd:string ; sh:maxCount 1 ] ;
+    sh:property [ sh:path :cpt_code ; sh:datatype xsd:string ; sh:maxCount 1 ; hcg:inScheme <urn:hcg:CPT> ] ;
+    sh:property [ sh:path :parent ; sh:class :SAMPLEFEE ; sh:maxCount 1 ] .

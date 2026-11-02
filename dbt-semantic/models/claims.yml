@@ -1,0 +1,27 @@
+semantic_models:
+  - name: claims
+    description: Claim lines
+    entities:
+      - name: claim
+        type: primary
+      - name: member
+        type: foreign
+    dimensions:
+      - name: status
+        type: categorical
+      - name: service_date
+        type: time
+        type_params:
+          time_granularity: day
+    measures:
+      - name: billed
+        agg: sum
+      - name: lines
+        agg: count
+  - name: members
+    entities:
+      - name: member
+        type: primary
+metrics:
+  - name: total_billed
+    type: simple

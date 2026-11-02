@@ -1,0 +1,34 @@
+unique_name: claims_model
+object_type: model
+label: Claims
+description: Claims as filed.
+
+relationships:
+  - unique_name: claim_to_member
+    from:
+      dataset: claim
+      join_columns:
+        - member_id
+    to:
+      dimension: member_dimension
+      level: member_level
+  - unique_name: claim_to_status
+    from:
+      dataset: claim
+      join_columns:
+        - status
+    to:
+      dimension: status_dimension
+      level: status_level
+
+metrics:
+  - unique_name: m_billed_sum
+  - unique_name: m_claims
+  - unique_name: avg_billed
+    folder: Ratios
+
+aggregates:
+  - unique_name: billed_by_status
+    label: Billed by status
+    metrics:
+      - m_billed_sum

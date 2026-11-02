@@ -1,0 +1,23 @@
+cubes:
+  - name: claims
+    sql_table: public.claims
+    dimensions:
+      - name: status
+        sql: status
+        type: string
+    measures:
+      - name: count
+        type: count
+    joins:
+      - name: members
+        relationship: many_to_one
+        sql: "{CUBE}.member_id = {members}.id"
+  - name: members
+    extends: base
+    dimensions:
+      - name: id
+        sql: id
+        type: number
+        primary_key: true
+  - name: base
+    sql_table: base

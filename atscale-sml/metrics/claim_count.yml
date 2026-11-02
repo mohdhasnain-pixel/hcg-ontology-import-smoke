@@ -1,0 +1,6 @@
+unique_name: m_claims
+object_type: metric
+label: Claim Count
+calculation_method: count distinct
+dataset: claim
+column: claim_id

@@ -1,0 +1,7 @@
+unique_name: m_billed_sum
+object_type: metric
+label: Billed Amount
+description: Sum of billed charges.
+calculation_method: sum
+dataset: claim
+column: billed

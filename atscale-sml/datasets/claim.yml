@@ -1,0 +1,17 @@
+unique_name: claim
+object_type: dataset
+label: claim
+connection_id: warehouse_claims
+table: claim
+
+columns:
+  - name: claim_id
+    data_type: bigint
+  - name: member_id
+    data_type: bigint
+  - name: billed
+    data_type: decimal(18,2)
+  - name: service_date
+    data_type: date
+  - name: status
+    data_type: string

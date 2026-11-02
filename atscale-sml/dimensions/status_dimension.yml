@@ -1,0 +1,18 @@
+unique_name: status_dimension
+object_type: dimension
+label: Claim Status
+type: standard
+
+hierarchies:
+  - unique_name: status_hierarchy
+    label: Status Hierarchy
+    levels:
+      - unique_name: status_level
+
+level_attributes:
+  - unique_name: status_level
+    label: Status
+    dataset: claim
+    name_column: status
+    key_columns:
+      - status

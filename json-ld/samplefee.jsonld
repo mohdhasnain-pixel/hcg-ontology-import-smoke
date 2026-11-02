@@ -1,0 +1,112 @@
+{
+  "@context": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dct": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "hcg": "https://hcg.autonomize.ai/ns/",
+    "attr": "https://hcg.autonomize.ai/ns/attr/",
+    "prefLabel": {
+      "@id": "skos:prefLabel",
+      "@language": "en"
+    },
+    "definition": {
+      "@id": "skos:definition",
+      "@language": "en"
+    },
+    "notation": "skos:notation",
+    "inScheme": {
+      "@id": "skos:inScheme",
+      "@type": "@id"
+    },
+    "topConceptOf": {
+      "@id": "skos:topConceptOf",
+      "@type": "@id"
+    },
+    "hasTopConcept": {
+      "@id": "skos:hasTopConcept",
+      "@type": "@id"
+    },
+    "broader": {
+      "@id": "skos:broader",
+      "@type": "@id"
+    },
+    "related": {
+      "@id": "skos:related",
+      "@type": "@id"
+    },
+    "closeMatch": {
+      "@id": "skos:closeMatch",
+      "@type": "@id"
+    },
+    "exactMatch": {
+      "@id": "skos:exactMatch",
+      "@type": "@id"
+    },
+    "title": "dct:title",
+    "description": "dct:description",
+    "subject": "dct:subject",
+    "version": "hcg:version",
+    "termType": "hcg:termType",
+    "source": "hcg:source",
+    "edited": {
+      "@id": "hcg:edited",
+      "@type": "xsd:boolean"
+    },
+    "relations": "hcg:relation",
+    "rel": "hcg:rel",
+    "rela": "hcg:rela",
+    "target": {
+      "@id": "hcg:target",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "urn:hcg:SAMPLEFEE",
+      "@type": "skos:ConceptScheme",
+      "title": "Sample fee schedule",
+      "notation": "SAMPLEFEE",
+      "subject": "payment",
+      "hasTopConcept": [
+        "urn:hcg:SAMPLEFEE:BAND_A"
+      ]
+    },
+    {
+      "@id": "urn:hcg:SAMPLEFEE:BAND_A",
+      "@type": "skos:Concept",
+      "inScheme": "urn:hcg:SAMPLEFEE",
+      "notation": "BAND_A",
+      "prefLabel": "Band A",
+      "termType": "HT",
+      "definition": "Synthetic office-visit fees.",
+      "topConceptOf": "urn:hcg:SAMPLEFEE"
+    },
+    {
+      "@id": "urn:hcg:SAMPLEFEE:99213",
+      "@type": "skos:Concept",
+      "inScheme": "urn:hcg:SAMPLEFEE",
+      "notation": "99213",
+      "prefLabel": "Office visit, established",
+      "termType": "PT",
+      "broader": [
+        "urn:hcg:SAMPLEFEE:BAND_A"
+      ],
+      "attr:allowed_usd": "100.00",
+      "closeMatch": [
+        "urn:umls:CPT:99213"
+      ]
+    },
+    {
+      "@id": "urn:hcg:SAMPLEFEE:99214",
+      "@type": "skos:Concept",
+      "inScheme": "urn:hcg:SAMPLEFEE",
+      "notation": "99214",
+      "prefLabel": "Office visit, extended",
+      "termType": "PT",
+      "broader": [
+        "urn:hcg:SAMPLEFEE:BAND_A"
+      ],
+      "attr:allowed_usd": "150.00"
+    }
+  ]
+}

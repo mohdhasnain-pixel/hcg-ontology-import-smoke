@@ -1,0 +1,94 @@
+{
+  "name": "Sample fee schedule",
+  "iri": "",
+  "version": "",
+  "description": "",
+  "classes": [
+    {
+      "name": "SAMPLEFEE",
+      "label": "Sample fee schedule",
+      "description": "",
+      "parent": null,
+      "key": [
+        "code"
+      ],
+      "vocabulary": "SAMPLEFEE"
+    }
+  ],
+  "properties": [
+    {
+      "name": "code",
+      "domain": "SAMPLEFEE",
+      "datatype": "string",
+      "code_scheme": null,
+      "required": true,
+      "multi": false,
+      "unique": true,
+      "label": "Code",
+      "description": ""
+    },
+    {
+      "name": "label",
+      "domain": "SAMPLEFEE",
+      "datatype": "string",
+      "code_scheme": null,
+      "required": true,
+      "multi": false,
+      "unique": false,
+      "label": "Name",
+      "description": ""
+    },
+    {
+      "name": "allowed_usd",
+      "domain": "SAMPLEFEE",
+      "datatype": "string",
+      "code_scheme": null,
+      "required": false,
+      "multi": false,
+      "unique": false,
+      "label": "allowed_usd",
+      "description": ""
+    },
+    {
+      "name": "cpt_code",
+      "domain": "SAMPLEFEE",
+      "datatype": "code",
+      "code_scheme": "CPT",
+      "required": false,
+      "multi": false,
+      "unique": false,
+      "label": "CPT code",
+      "description": ""
+    }
+  ],
+  "relations": [
+    {
+      "name": "parent",
+      "domain": "SAMPLEFEE",
+      "range": "SAMPLEFEE",
+      "cardinality": "N:1",
+      "inverse": null,
+      "required": false,
+      "transitive": false,
+      "label": "Parent",
+      "description": ""
+    }
+  ],
+  "constraints": [],
+  "axioms": [],
+  "format_version": 1,
+  "validation": {
+    "ok": true,
+    "violations": 0,
+    "warnings": 0,
+    "rows_checked": {
+      "SAMPLEFEE": 3
+    },
+    "by_class": {},
+    "findings": [],
+    "skipped": [
+      "SAMPLEFEE.cpt_code: CPT membership not checked (no vocabulary lookup)"
+    ],
+    "schema_errors": []
+  }
+}

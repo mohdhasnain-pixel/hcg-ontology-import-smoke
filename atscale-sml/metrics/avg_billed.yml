@@ -1,0 +1,4 @@
+unique_name: avg_billed
+object_type: metric_calc
+label: Average Billed per Claim
+expression: "[Measures].[m_billed_sum]/[Measures].[m_claims]"

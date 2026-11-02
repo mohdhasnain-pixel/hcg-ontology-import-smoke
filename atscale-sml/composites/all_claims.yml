@@ -1,0 +1,5 @@
+unique_name: all_claims
+object_type: composite_model
+label: All Claims
+models:
+  - claims_model

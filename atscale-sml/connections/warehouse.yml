@@ -1,0 +1,6 @@
+unique_name: warehouse_claims
+label: Claims warehouse
+object_type: connection
+as_connection: Snowflake
+database: claims_db
+schema: claims

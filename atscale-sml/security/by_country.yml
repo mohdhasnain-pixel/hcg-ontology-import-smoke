@@ -1,0 +1,10 @@
+unique_name: country_filter
+label: Country Filter
+object_type: row_security
+dataset: member
+filter_key_column: member_id
+use_filter_key: true
+ids_column: member_name
+id_type: group
+scope: related
+secure_totals: true

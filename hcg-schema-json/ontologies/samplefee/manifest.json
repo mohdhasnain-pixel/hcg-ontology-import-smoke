@@ -1,0 +1,11 @@
+{
+  "files": {
+    "samplefee.jsonld": "9ead3d8ad70bea00b32bcfdca6bb388d3d15833a293380c38d0d05008f462d3b",
+    "samplefee.owl.ttl": "edcfd14918acfc600568c949e9c094c7a20096964eb65080275a194f91249192",
+    "samplefee.schema.json": "954dea39ae68a7aa7b3211156969ce0dc64e215064416e342efbe08449fefd0a",
+    "samplefee.ttl": "90244576ba2a4b56b63e15d71e697d6a22785f93776503d53a2cf16ef0f63e3a"
+  },
+  "name": "Sample fee schedule",
+  "sab": "SAMPLEFEE",
+  "tags": []
+}
